@@ -1,0 +1,181 @@
+{
+    "EMSAC Payroc Raw Aug 7 to Aug 31 1.xlsx": {
+      "invoice": {
+        "memo": "",
+        "due_date": "",
+        "issue_date": "",
+        "line_items": [
+          {
+            "item": {
+              "id": "id",
+              "quantity": 0,
+              "item_name": "",
+              "unit_amount": "amount"
+            },
+            "class_name": "",
+            "description": "",
+            "total_amount": ""
+          }
+        ],
+        "customer_id": "customer_id",
+        "currency_code": "",
+        "customer_name": "first_name, last_name, company",
+        "document_number": "orderid",
+        "additional_fields": {
+          "addresses": [
+            "address1",
+            "address2",
+            "city",
+            "state",
+            "zip_code",
+            "country",
+            "shipping_address1",
+            "shipping_address2",
+            "shipping_city",
+            "shipping_state",
+            "shipping_zip_code",
+            "shipping_country"
+          ],
+          "not_found": [
+            "payment_type",
+            "type",
+            "account",
+            "account_expiration",
+            "time",
+            "status",
+            "response",
+            "responsetext",
+            "avs_results",
+            "csc_results",
+            "auth_code",
+            "batch_id",
+            "first_name",
+            "last_name",
+            "company",
+            "email",
+            "shipping_first_name",
+            "shipping_last_name",
+            "shipping_company",
+            "shipping_email",
+            "shipping_address1",
+            "shipping_address2",
+            "shipping_city",
+            "shipping_state",
+            "shipping_zip_code",
+            "shipping_country",
+            "shipping_email",
+            "merchant_defined_field_1",
+            "merchant_defined_field_2",
+            "merchant_defined_field_3",
+            "merchant_defined_field_4",
+            "merchant_defined_field_5",
+            "merchant_defined_field_6",
+            "phone",
+            "fax",
+            "routing",
+            "account_name",
+            "aux_data_1",
+            "aux_data_2",
+            "cardholder_auth",
+            "platform_id",
+            "ip_address",
+            "processor",
+            "merchant_defined_field_7",
+            "merchant_defined_field_8",
+            "merchant_defined_field_9",
+            "merchant_defined_field_10",
+            "merchant_defined_field_11",
+            "merchant_defined_field_12",
+            "merchant_defined_field_13",
+            "merchant_defined_field_14",
+            "merchant_defined_field_15",
+            "merchant_defined_field_16",
+            "merchant_defined_field_17",
+            "merchant_defined_field_18",
+            "merchant_defined_field_19",
+            "merchant_defined_field_20",
+            "tracking_number",
+            "username",
+            "orderdescription",
+            "ponumber",
+            "source",
+            "billing_method",
+            "entry_method",
+            "Item"
+          ]
+        }
+      },
+      "Time": "02:07"
+    },
+    "EMSAC Stripe Transactions Raw Aug 1 to Aug 30 2024 002.xlsx": {
+      "invoice": {
+        "memo": "",
+        "due_date": "",
+        "issue_date": "",
+        "line_items": [
+          {
+            "item": {
+              "id": "automatic_payout_id",
+              "quantity": 0,
+              "item_name": "",
+              "unit_amount": 0
+            },
+            "class_name": "",
+            "description": "description",
+            "total_amount": 0
+          }
+        ],
+        "customer_id": "",
+        "currency_code": "currency",
+        "customer_name": "",
+        "document_number": "",
+        "additional_fields": {
+          "addresses": [],
+          "not_found": [
+            "automatic_payout_effective_at",
+            "balance_transaction_id",
+            "created",
+            "available_on",
+            "reporting_category",
+            "gross",
+            "fee",
+            "net"
+          ]
+        }
+      },
+      "Time": "00:31"
+    },
+    "QBInvc2024-04-Final 2.xlsx": {
+      "invoice": {
+        "memo": "",
+        "due_date": "Tran Date",
+        "issue_date": "Service Date",
+        "line_items": [
+          {
+            "item": {
+              "id": "Item",
+              "quantity": "Quantity",
+              "item_name": "Description",
+              "unit_amount": "Price"
+            },
+            "class_name": "Class",
+            "description": "",
+            "total_amount": ""
+          }
+        ],
+        "customer_id": "",
+        "currency_code": "",
+        "customer_name": "CustomerName",
+        "document_number": "RefNumber",
+        "additional_fields": {
+          "addresses": [],
+          "not_found": [
+            "Other1",
+            "Other2",
+            "Extension"
+          ]
+        }
+      },
+      "Time": "00:28"
+    }
+  }
