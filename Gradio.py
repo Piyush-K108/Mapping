@@ -1,3 +1,4 @@
+import re
 import gradio as gr
 import json
 import os
@@ -18,30 +19,36 @@ def call_mistral(extraction_contract,dynamic_list):
         'Accept': 'application/json',
     }
 
-    
-    content = f"""
-    Your task is to match the list I provide with the JSON structure.
 
-    1) Carefully understand the columns/headers from my list.
+
+    content = f"""
+    Your task is to match columns from a list to the JSON structure I provide.
+
+    1) Carefully analyze the columns/headers in my list for names and potential matches with JSON keys.
 
     2) My JSON structure is: {extraction_contract} and my list is: {dynamic_list}
 
-    3) Populate the JSON with the matching columns from the list.
+    3) Populate the JSON fields with the specified values, ensuring that no programming constructs (e.g., concatenations, functions, `+`, or `join`) are used.
 
-    4) Place any columns from the list that do not have a match in the JSON inside the 'not_found' key under 'additional_fields'.
+    4) All placeholders use `$(value)` to make dynamic insertion explicit.
+    
+    5) Place any columns from the list that do not have a matching JSON key inside the 'not_found' field under 'additional_fields' in the JSON.
 
-    5) Return only the corrected and filled JSON, without any extra text or comments.
+    6) Return only the corrected and filled JSON, without any additional text, explanations, or comments.
 
-    6) Your response should look like this: '''json <Corrected JSON> '''
+    7) Your response format should be: ```json <Corrected JSON> ```
 
-    7) Do not include any additional text outside of the JSON format.
+    8) Do not include any text outside of the JSON format or instructions.
     """
+
+
 
 
     message = {
         "role": "user",
         "content": content
     }
+    print(message)
     payload = {
         "model": "mistral:latest",
         "messages": [message],
@@ -51,7 +58,7 @@ def call_mistral(extraction_contract,dynamic_list):
         "stream": False,
         "safe_prompt": False,
     }
-    print(message)
+
 
     payload_json = json.dumps(payload)
 
@@ -121,22 +128,22 @@ def json_to_file(json_data,file_dir, output_file):
 
 
 def clean_json(json_str):
-
-    print(json_str)
-    # Remove backticks and unnecessary characters
+    # Step 1: Remove any markdown formatting
     cleaned_str = json_str.strip().replace('```json', '').replace('```', '').strip()
     
-    # Replace single quotes with double quotes (for valid JSON)
+    # Step 2: Replace single quotes with double quotes for valid JSON
     cleaned_str = cleaned_str.replace("'", '"')
+    print(cleaned_str)
+    # Step 3: Remove any trailing commas before closing braces or brackets
+    cleaned_str = re.sub(r',\s*([}\]])', r'\1', cleaned_str)
     
-    # Load the cleaned string into a JSON object
+    # Step 4: Try loading the cleaned string into a JSON object
     try:
         json_obj = json.loads(cleaned_str)
         return json_obj
     except json.JSONDecodeError as e:
         print("Error decoding JSON:", e)
         return None
-
 
 def Mapping_Process(files, entity):
     # Dictionary mapping each entity to its respective extraction contract

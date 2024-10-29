@@ -22,7 +22,7 @@ extraction_contract_invoice = {
         "document_number": "",
         "additional_fields": {
             "addresses": [],
-            "not_found": "",
+            "not_found": ""
         }
     }
 }
@@ -179,9 +179,6 @@ extraction_contract_bill = {
                 }
             }
         ],
-
-        "not_found": "",
-
     }
 }
 
@@ -287,7 +284,7 @@ extraction_contract_invoices_payments = {
                 "amount": 0
             }
         ],
-        "not_found": "",
+
     }
 }
 
@@ -377,7 +374,7 @@ extraction_contract_journal_entry = {
                 "description": ""
             }
         ],
-        "not_found": "",
+
     }
 }
 
@@ -428,246 +425,203 @@ extraction_contract_journal_entry_structure = {
 
 
 extraction_contract_sales_order = {
-    "QBXML": {
-        "QBXMLMsgsRq": {
-            "@onError": "stopOnError",
-            "SalesOrderAddRq": {
-                "@requestID": "reqId",
-                "SalesOrderAdd": {
-                    "CustomerRef": {
-                        "FullName": "CustomerId"
+    "SalesOrderAddRq": {
+        "requestID": "",
+        "SalesOrderAdd": {
+            "CustomerRef": {
+                "FullName": ""
+            },
+            "TemplateRef": {
+                "FullName": ""
+            },
+            "TxnDate": "",
+            "RefNumber": "",
+            "BillAddress": {
+                "Addr1": "",
+                "Addr2": "",
+                "City": "",
+                "State": "",
+                "PostalCode": ""
+            },
+            "ShipAddress": {
+                "Addr1": "",
+                "Addr2": "",
+                "City": "",
+                "State": "",
+                "PostalCode": ""
+            },
+            "PONumber": "",
+            "DueDate": "",
+            "ShipDate": "",
+            "Other": "",
+            "SalesOrderLineAdd": [
+                {
+                    "ItemRef": {
+                        "FullName": ""
                     },
-                    "TemplateRef": {
-                        "FullName": "TemplateRefId"
+                    "Desc": "",
+                    "Quantity": "",
+                    "Rate": ""
+                },
+                {
+                    "ItemRef": {
+                        "FullName": ""
                     },
-                    "TxnDate": "TxnDate",
-                    "RefNumber": "RefNumber",
-                    "BillAddress": {
-                        "Addr1": "BillAddress1",
-                        "Addr2": "BillAddress2",
-                        "City": "BillCity",
-                        "State": "BillState",
-                        "PostalCode": "BillPostalCode"
-                    },
-                    "ShipAddress": {
-                        "Addr1": "ShipAddress1",
-                        "Addr2": "ShipAddress2",
-                        "City": "ShipCity",
-                        "State": "ShipState",
-                        "PostalCode": "ShipPostalCode"
-                    },
-                    "PONumber": "PONumber",
-                    "DueDate": "DueDate",
-                    "ShipDate": "ShipDate",
-                    "Other": "Other",
-                    "SalesOrderLineAdd": [
-                        {
-                            "ItemRef": {
-                                "FullName": "ItemId"
-                            },
-                            "Desc": "ItemDesc",
-                            "Quantity": "ItemQuantity",
-                            "Rate": "ItemRate"
-                        },
-                        {
-                            "ItemRef": {
-                                "FullName": "ItemId"
-                            },
-                            "Desc": "ItemDesc",
-                            "Quantity": "ItemQuantity",
-                            "Rate": "ItemRate"
-                        }
-                    ],
-                    "not_found": "",
-                 }
-            }
+                    "Desc": "",
+                    "Quantity": "",
+                    "Rate": ""
+                }
+            ]
         }
     }
 }
 
 
 extraction_contract_item_services = {
-    "QBXML": {
-        "QBXMLMsgsRq": {
-            "ItemServiceAddRq": {
-                "@requestID": "reqId",
-                "ItemServiceAdd": {
-                    "Name": "ItemName",
-                    "IsActive": "isActiveCheck",
+    "ItemServiceAddRq": {
+        "requestID": "",
+        "ItemServiceAdd": {
+            "Name": "",
+                    "IsActive": "",
                     "ClassRef": {
-                        "FullName": "ClassRefName"
+                        "FullName": ""
                     },
-                    "ParentRef": {
-                        "FullName": "ParentRefName"
+            "ParentRef": {
+                        "FullName": ""
                     },
-                    "ManufacturerPartNumber": "ManufacturerPartNumberReq",
-                    "UnitOfMeasureSetRef": {
-                        "FullName": "UnitMeasureSetRef"
+            "ManufacturerPartNumber": "",
+            "UnitOfMeasureSetRef": {
+                        "FullName": ""
                     },
-                    "IsTaxIncluded": "IsTaxIncludedCheck",
-                    "SalesTaxCodeRef": {
-                        "FullName": "SalesTaxCodeRefName"
+            "IsTaxIncluded": "",
+            "SalesTaxCodeRef": {
+                        "FullName": ""
                     },
-                    "SalesOrPurchase": {
-                        "Desc": "SalesOrPurchaseDesc",
-                        "Price": "SalesOrPurchasePrice",
-                        "PricePercent": "SalesOrPurchasePricePercent",
+            "SalesOrPurchase": {
+                        "Desc": "",
+                        "Price": "",
                         "AccountRef": {
-                            "FullName": "SalesOrPurchaseAccountRefName"
+                            "FullName": ""
                         }
-                    },
-                    "not_found": "",
-                }
-            }
+                    }
         }
     }
 }
 
 
 extraction_contract_customer = {
-    "QBXML": {
-        "QBXMLMsgsRq": {
-            "@onError": "stopOnError",
-            "CustomerAddRq": {
-                "@requestID": "reqId",
-                "CustomerAdd": {
-                    "Name": "CustomerName",
-                    "IsActive": "IsStatusCheck",
-                    "ClassRef": {
-                        "FullName": "ClassRefName"
-                    },
-                    "ParentRef": {
-                        "FullName": "ParentRefName"
-                    },
-                    "CompanyName": "CompanyName",
-                    "Salutation": "Salutation",
-                    "FirstName": "FirstName",
-                    "MiddleName": "MiddleName",
-                    "LastName": "LastName",
-                    "JobTitle": "JobTitle",
-                    "BillAddress": {
-                        "Addr1": "BillAdd1",
-                        "Addr2": "BillAdd2",
-                        "Addr3": "BillAdd3",
-                        "Addr4": "BillAdd4",
-                        "Addr5": "BillAdd5",
-                        "City": "BillCity",
-                        "State": "BillState",
-                        "PostalCode": "BillPostalCode",
-                        "Country": "BillCountry",
-                        "Note": "BillNote"
-                    },
-                    "ShipAddress": {
-                        "Addr1": "ShipAdd1",
-                        "Addr2": "ShipAdd2",
-                        "Addr3": "ShipAdd3",
-                        "Addr4": "ShipAdd4",
-                        "Addr5": "ShipAdd5",
-                        "City": "ShipCity",
-                        "State": "ShipState",
-                        "PostalCode": "ShipPostalCode",
-                        "Country": "ShipCountry",
-                        "Note": "ShipNote"
-                    },
-                    "Phone": "phone",
-                    "AltPhone": "AltPhone",
-                    "Fax": "Fax",
-                    "Email": "Email",
-                    "Cc": "Cc",
-                    "Contact": "Contact",
-                    "AltContact": "AltContact",
-                    "Contacts": {
-                        "Salutation": "ContactsSalutation",
-                        "FirstName": "ContactsFirstName",
-                        "MiddleName": "ContactsMiddleName",
-                        "LastName": "ContactsLastName",
-                        "JobTitle": "ContactsJobTitle"
-                    },
-                    "CustomerTypeRef": {
-                        "FullName": "CustomerTypeRefName"
-                    },
-                    "TermsRef": {
-                        "FullName": "TermsRefName"
-                    },
-                    "SalesRepRef": {
-                        "FullName": "SalesRepRefName"
-                    },
-                    "OpenBalance": "OpenBalance",
-                    "OpenBalanceDate": "OpenBalanceDate",
-                    "SalesTaxCodeRef": {
-                        "FullName": "SalesTaxCodeRefName"
-                    },
-                    "ItemSalesTaxRef": {
-                        "FullName": "ItemSalesTaxRefName"
-                    },
-                    "AccountNumber": "AccountNumber",
-                    "JobStatus": "JobStatus",
-                    "JobStartDate": "JobStartDate",
-                    "JobProjectedEndDate": "JobProjectedEndDate",
-                    "JobEndDate": "JobEndDate",
-                    "JobDesc": "JobDesc",
-                    "JobTypeRef": {
-                        "FullName": "JobTypeRefName"
-                    },
-                    "PreferredDeliveryMethod": "PreferredDeliveryMethod",
-                    "not_found": "",
-                }
-            }
-        }
+    "Customer": {
+        "Name": "",
+        "IsActive": "",
+        "ClassRef": "",
+        "ParentRef": "",
+        "CompanyName": "",
+        "Salutation": "",
+        "FirstName": "",
+        "MiddleName": "",
+        "LastName": "",
+        "JobTitle": "",
+        "BillAddress": {
+            "Addr1": "",
+            "Addr2": "",
+            "Addr3": "",
+            "Addr4": "",
+            "Addr5": "",
+            "City": "",
+            "State": "",
+            "PostalCode": "",
+            "Country": "",
+            "Note": ""
+        },
+        "ShipAddress": {
+            "Addr1": "",
+            "Addr2": "",
+            "Addr3": "",
+            "Addr4": "",
+            "Addr5": "",
+            "City": "",
+            "State": "",
+            "PostalCode": "",
+            "Country": "",
+            "Note": ""
+        },
+        "Phone": "",
+        "AltPhone": "",
+        "Fax": "",
+        "Email": "",
+        "Cc": "",
+        "Contact": "",
+        "AltContact": "",
+        "Contacts": {
+            "Salutation": "",
+            "FirstName": "",
+            "MiddleName": "",
+            "LastName": "",
+            "JobTitle": ""
+        },
+        "CustomerTypeRef": "",
+        "TermsRef": "",
+        "SalesRepRef": "",
+        "OpenBalance": "",
+        "OpenBalanceDate": "",
+        "SalesTaxCodeRef": "",
+        "ItemSalesTaxRef": "",
+        "AccountNumber": "",
+        "JobStatus": "",
+        "JobStartDate": "",
+        "JobProjectedEndDate": "",
+        "JobEndDate": "",
+        "JobDesc": "",
+        "JobTypeRef": "",
+        "PreferredDeliveryMethod": ""
     }
 }
 
-
 extraction_contract_item_inventory = {
-    "QBXML": {
-        "QBXMLMsgsRq": {
-            "@onError": "stopOnError",
-            "ItemInventoryAddRq": {
-                "@requestID": "reqId",
-                "ItemInventoryAdd": {
-                    "Name": "ItemName",
-                    "IsActive": "isActiveCheck",
+
+    "ItemInventoryAddRq": {
+        "requestID": "",
+        "ItemInventoryAdd": {
+            "Name": "",
+                    "IsActive": "",
                     "ClassRef": {
-                        "FullName": "ClassRefName"
+                        "FullName": ""
                     },
-                    "ParentRef": {
-                        "FullName": "ParentRefName"
+            "ParentRef": {
+                        "FullName": ""
                     },
-                    "ManufacturerPartNumber": "ManufacturerPartNumberReq",
-                    "UnitOfMeasureSetRef": {
-                        "FullName": "UnitMeasureSetRef"
+            "ManufacturerPartNumber": "",
+            "UnitOfMeasureSetRef": {
+                        "FullName": ""
                     },
-                    "IsTaxIncluded": "IsTaxIncludedCheck",
-                    "SalesTaxCodeRef": {
-                        "FullName": "SalesTaxCodeRefName"
+            "IsTaxIncluded": "",
+            "SalesTaxCodeRef": {
+                        "FullName": ""
                     },
-                    "SalesDesc": "SalesDescritption",
-                    "SalesPrice": "SalesPriceType",
-                    "IncomeAccountRef": {
-                        "FullName": "IncomeAccountRefName"
+            "SalesDesc": "",
+            "SalesPrice": "",
+            "IncomeAccountRef": {
+                        "FullName": ""
                     },
-                    "PurchaseDesc": "PurchaseDescription",
-                    "PurchaseCost": "PurchaseCostPriceType",
-                    "PurchaseTaxCodeRef": {
-                        "FullName": "PurchaseTaxCodeRefName"
+            "PurchaseDesc": "",
+            "PurchaseCost": "",
+            "PurchaseTaxCodeRef": {
+                        "FullName": ""
                     },
-                    "COGSAccountRef": {
-                        "FullName": "COGSAccountRefName"
+            "COGSAccountRef": {
+                        "FullName": ""
                     },
-                    "PrefVendorRef": {
-                        "FullName": "PrefVendorRefName"
+            "PrefVendorRef": {
+                        "FullName": ""
                     },
-                    "AssetAccountRef": {
-                        "FullName": "AssetAccountRefName"
+            "AssetAccountRef": {
+                        "FullName": ""
                     },
-                    "ReorderPoint": "ReorderPointQuantityType",
-                    "Max": "MaxQuantyType",
-                    "QuantityOnHand": "QuantityOnHandType",
-                    "TotalValue": "TotalValueAmtType",
-                    "InventoryDate": "InventoryDateType",
-                    "not_found": "",
-                }
-            }
+            "ReorderPoint": "",
+            "Max": "",
+            "QuantityOnHand": "",
+            "TotalValue": "",
+            "InventoryDate": ""
         }
     }
 }
